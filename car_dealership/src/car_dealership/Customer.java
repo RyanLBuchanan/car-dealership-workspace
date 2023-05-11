@@ -2,11 +2,42 @@ package car_dealership;
 
 public class Customer {
 
-	String name;
-	String address;
-	double cashOnHand;
-	
-	public void purchaseCar(Vehicle vehicle, Employee emp, boolean financed) {
-				
-	}
+    // Private instance variables for the customer's name, address, and cash on hand
+    private String name;
+    private String address;
+    private double cashOnHand;
+
+    // Getters and setters for the customer's name, address, and cash on hand
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    // Setter for the customer's address that adds " Dealership City" to the end
+    public void setAddress(String address) {
+        address += " Dealership City";
+        this.address = address;
+    }
+
+    public double getCashOnHand() {
+        return cashOnHand;
+    }
+
+    // Setter for the customer's cash on hand that adds $500 to it
+    public void setCashOnHand(double cashOnHand) {
+        cashOnHand += 500;
+        this.cashOnHand = cashOnHand;
+    }
+
+    // Method for the customer to purchase a car from the dealership
+    public void purchaseCar(Vehicle vehicle, Employee emp, boolean finance) {
+        emp.handleCustomer(this, finance, vehicle);
+    }
 }
